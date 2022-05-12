@@ -1,0 +1,8 @@
+Step 1: docker run -d -p 8080:8080 --name=jenkins -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock -v jenkins-volume:/var/jenkins_home jenkins/jenkins
+Step 2: docker exec --user=root -it jenkins
+        Run these command inside jenkins container
+            Step 0: apt update
+            Step 1: apt install docker.io 
+            Step 1: usermod -aG docker jenkins 
+            Step 2: chown jenkins /var/run/docker.sock
+Now open browser with jenkins
